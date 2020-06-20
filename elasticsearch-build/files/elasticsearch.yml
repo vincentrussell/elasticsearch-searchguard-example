@@ -1,0 +1,22 @@
+network.host: 0.0.0.0
+xpack.security.enabled: false
+node.name: elasticsearch
+cluster.name: elasticsearch
+discovery.seed_hosts: ["elasticsearch"]
+cluster.initial_master_nodes: ["elasticsearch"]
+
+
+searchguard.ssl.transport.pemcert_filepath: certs/esnode.pem
+searchguard.ssl.transport.pemkey_filepath: certs/esnode-key.pem
+searchguard.ssl.transport.pemtrustedcas_filepath: certs/root-ca.pem
+searchguard.ssl.transport.enforce_hostname_verification: false
+searchguard.ssl.http.enabled: true
+searchguard.ssl.http.pemcert_filepath: certs/esnode.pem
+searchguard.ssl.http.pemkey_filepath: certs/esnode-key.pem
+searchguard.ssl.http.pemtrustedcas_filepath: certs/root-ca.pem
+searchguard.allow_unsafe_democertificates: true
+searchguard.allow_default_init_sgindex: true
+searchguard.authcz.admin_dn:
+  - CN=kirk,OU=client,O=client,L=test,C=de
+searchguard.restapi.roles_enabled: ["SGS_ALL_ACCESS"]
+
